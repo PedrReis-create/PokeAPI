@@ -52,5 +52,3 @@ if pokemon_info:
 else:
     print('Pokémon não encontrado')
     
-print(pokemon_info['abilities'])
-    
