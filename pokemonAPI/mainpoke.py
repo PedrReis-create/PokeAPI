@@ -9,13 +9,13 @@ def menu():
     
     while True:
         
-        print("===== POKEDEX =====")
+        print("\nBem-vindo a PokeAPI!")
         print("1 - Buscar Pokémon")
         print("2 - Ver histórico")
         print("3 - Sair")
         
         try:
-            escolha = int(input("Escolha:"))
+            escolha = int(input("Escolha: "))
         except ValueError:
             print('Digite um valor válido')
             continue
@@ -25,6 +25,8 @@ def menu():
         elif escolha == 2:
             historico()
         elif escolha == 3:
+            print('Obrigado por usar a PokeAPI!')
+            print('Saindo...')
             sys.exit()
         
     
@@ -53,10 +55,10 @@ def buscar_pokemon():
     name = input('Digite o nome do pokemon que deseja consultar: ').lower().strip()
 
     print('Procurando...')
-    time.sleep(6)
+    time.sleep(1)
 
     print('Aguarde só mais um pouco')
-    time.sleep(5)
+    time.sleep(0.5)
 
     pokemon_info = get_pokemon_info(name)
 
@@ -68,16 +70,17 @@ def buscar_pokemon():
         print(f"Id: {pokemon_info['id']}")
         print(f"Altura: {pokemon_info['height']}")
         print(f"Peso: {pokemon_info['weight']}")
-        print("Habilidades: ")
+        
+        print("\nHabilidades: ")
                 
         for habilidade in pokemon_info['abilities']:
             print(habilidade['ability']['name'].capitalize())
                     
-        print("Tipo: ")
+        print("\nTipo: ")
                 
         for tipo in pokemon_info['types']:
             print(tipo['type']['name'].capitalize())
-                    
+        print('-'*30)
     else:
         print('Pokémon não encontrado')
 
