@@ -39,7 +39,18 @@ if pokemon_info:
     print(f"Id: {pokemon_info['id']}")
     print(f"Altura: {pokemon_info['height']}")
     print(f"Peso: {pokemon_info['weight']}")
+    print("Habilidades: ")
     
+    for habilidade in pokemon_info['abilities']:
+        print(habilidade['ability']['name'].capitalize())
+        
+    print("Tipo: ")
+    
+    for tipo in pokemon_info['types']:
+        print(tipo['type']['name'].capitalize())
+        
 else:
     print('Pokémon não encontrado')
+    
+print(pokemon_info['abilities'])
     
