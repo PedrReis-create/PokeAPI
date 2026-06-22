@@ -15,48 +15,44 @@ def conectar():
         database=os.getenv("DB_NAME"),
         port=os.getenv("DB_PORT")
     )
-    
+
 
 def salvar_historico(pokemon):
     try:
         conexao = conectar()
         cursor = conexao.cursor()
-    
+
         cursor.execute(
             "INSERT INTO historico_pesquisas (pokemon) VALUES (%s)",
             (pokemon,)
         )
-        
+
         conexao.commit()
-    
+
     except mysql.connector.Error:
-        print('Erro ao salvar no histórico')
-        
+        print("Erro ao salvar no histórico")
+
     finally:
-        conexao.close()
         cursor.close()
-        
-        
+        conexao.close()
+
+
 def mostrar_historico():
     try:
         conexao = conectar()
         cursor = conexao.cursor()
-        
+
         cursor.execute(
             "SELECT * FROM historico_pesquisas"
         )
-    
+
         resultado = cursor.fetchall()
         return resultado
 
-
     except mysql.connector.Error:
-        print('Erro ao mostrar o histórico')
-        return[]
-    
+        print("Erro ao mostrar o histórico")
+        return []
+
     finally:
-        conexao.close()
         cursor.close()
-    
-    
-        
+        conexao.close()
