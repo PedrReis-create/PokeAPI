@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeAPI</title>
+</head>
+<body>
+    <h1>Histórico</h1>
+
+    {% for pesquisa in historico %}
+
+        <p>
+            ID: {{pesquisa[0]}}<br>
+            Pokemeon: {{pesquisa[1]}}<br>
+            Data da pesquisa: {{pesquisa[2]}}
+        </p>
+    
+    {% endfor %}
+    <br>
+
+    <a href="/">
+        Voltar a pesquisa
+    </a>
+</body>
+</html>
