@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from src.pokemon_api import get_pokemon_info
-from src.database import mostrar_historico
+from src.database import mostrar_historico, salvar_historico
 
 app = Flask(__name__)
 
@@ -13,6 +13,9 @@ def home():
     if request.method == 'POST':
         pokemon_name = request.form.get('pokemon')
         pokemon_info = get_pokemon_info(pokemon_name)
+        
+    if pokemon_info:
+        salvar_historico(pokemon_info['name'])
     
     return render_template(
         'index.html',
