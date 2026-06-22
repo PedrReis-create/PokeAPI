@@ -96,7 +96,7 @@ def buscar_pokemon():
 def historico():
 
     print("-" * 30)
-    print("Erro: Trabalhando nisso")
+    print('Erro: trabalhando nisso!')
     print("-" * 30)
 
 
