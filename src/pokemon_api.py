@@ -1,7 +1,7 @@
 import requests
 import time
 import sys
-from database import salvar_historico, mostrar_historico
+from src.database import salvar_historico, mostrar_historico
 
 
 base_url = "https://pokeapi.co/api/v2/"

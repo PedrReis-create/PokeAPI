@@ -13,6 +13,14 @@
         <input type="text" name="pokemon" placeholder="Digite aqui" required>
         <button type="submit">Enviar</button>
     </form>
-    <p>Seu pokemon escolhido atualmente: {{dados}}</p>
+    
+    {% if pokemon_info %}
+    <p> Nome do seu pokemon: {{pokemon_info.name}}<br>
+        ID do seu pokemon: {{pokemon_info.id}}<br>
+        Altura do seu pokemon: {{pokemon_info.height}}<br>
+        Peso do seu pokemon: {{pokemon_info.weight}}
+    </p>
+
+    {% endif %}
 </body>
 </html>

@@ -1,19 +1,23 @@
 from flask import Flask, render_template, request
+from src.pokemon_api import get_pokemon_info
+
 
 app = Flask(__name__)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     
-    pokemon = ''
+    pokemon_info= None
     
     if request.method == 'POST':
-        pokemon = request.form.get('pokemon')
+        pokemon_name = request.form.get('pokemon')
+        pokemon_info = get_pokemon_info(pokemon_name)
     
     return render_template(
         'index.html',
-        dados = pokemon
+        pokemon_info=pokemon_info
     )
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
