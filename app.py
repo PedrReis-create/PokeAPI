@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request
 from src.pokemon_api import get_pokemon_info
-
+from src.database import mostrar_historico
 
 app = Flask(__name__)
 
-
+#Pegar infos do pokemon digitado
 @app.route('/', methods=['GET', 'POST'])
 def home():
     
@@ -17,6 +17,17 @@ def home():
     return render_template(
         'index.html',
         pokemon_info=pokemon_info
+    )
+
+#Mostrar histórico
+@app.route('/historico')
+def historico():
+    
+    pesquisas = mostrar_historico()
+    
+    return render_template(
+        'historico.html',
+        historico=pesquisas
     )
 
 if __name__ == '__main__':
