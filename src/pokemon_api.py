@@ -1,6 +1,7 @@
 import requests
 import time
 import sys
+from database import salvar_historico, mostrar_historico
 
 
 base_url = "https://pokeapi.co/api/v2/"
@@ -9,7 +10,7 @@ base_url = "https://pokeapi.co/api/v2/"
 def menu():
 
     while True:
-        print("\nBem-vindo a PokeAPI!")
+        print("\nMenu")
         print("1 - Buscar Pokémon")
         print("2 - Ver histórico")
         print("3 - Sair")
@@ -48,7 +49,7 @@ def get_pokemon_info(name):
         return pokemon_data
 
     else:
-        print(f"Failed to retrieve data {response.status_code}")
+        print(f"\nNão foi possível consultar. Erro: {response.status_code}")
         return None
 
 
@@ -71,7 +72,9 @@ def buscar_pokemon():
     if pokemon_info:
         print("Finalizando pesquisas")
         time.sleep(1)
-
+        
+        salvar_historico(pokemon_info['name'])
+        
         print(f"\nNome: {pokemon_info['name'].capitalize()}")
         print(f"Id: {pokemon_info['id']}")
         print(f"Altura: {pokemon_info['height']}")
@@ -95,9 +98,14 @@ def buscar_pokemon():
 
 def historico():
 
+    historico = mostrar_historico()
+    
     print("-" * 30)
-    print('Erro: trabalhando nisso!')
-    print("-" * 30)
-
+    
+    for pesquisa in historico:
+        print(f'ID da pesquisa: {pesquisa[0]}')
+        print(f'Pokemon: {pesquisa[1]} ')
+        print(f'Data: {pesquisa[2]}')
+        print('-' * 30)
 
 menu()
