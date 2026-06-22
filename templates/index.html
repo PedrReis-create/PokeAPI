@@ -9,11 +9,14 @@
     >
 </head>
 <body>
-    <form method ='POST'>
+    <form method ='POST' onsubmit="mostrarLoading()">
         <input type="text" name="pokemon" placeholder="Digite aqui" required>
         <button type="submit">Enviar</button>
     </form>
-    
+    <p id="loading" style="display: none;">
+        Pesquisando...
+    </p>
+
     {% if pokemon_info %}
     <p> Nome do seu pokemon: {{pokemon_info.name}}<br>
         ID do seu pokemon: {{pokemon_info.id}}<br>
@@ -23,4 +26,9 @@
 
     {% endif %}
 </body>
+<script>
+    function mostrarLoading(){
+        document.getElementById('loading').style.display='block';
+    }
+</script>
 </html>
