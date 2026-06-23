@@ -1,66 +1,155 @@
-# 🐍 Pokédex API
+# 🐍 Pokédex Web API
 
-Projeto simples em Python que consome a PokéAPI para buscar informações sobre Pokémons pelo terminal.
+Aplicação web desenvolvida em Python utilizando Flask.  
+O projeto consome a PokéAPI para buscar informações de Pokémons e utiliza MySQL para armazenar o histórico de pesquisas.
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue)
+![Flask](https://img.shields.io/badge/Flask-Web-green)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
 ![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
 ![API](https://img.shields.io/badge/API-PokeAPI-red)
 
+---
+
 ## 📌 Funcionalidades
 
-- Buscar Pokémon pelo nome
-- Mostrar informações básicas:
-  - Nome
-  - ID
-  - Altura
-  - Peso
-  - Habilidades
-  - Tipo
-- Tratamento de erros de conexão
-- Menu interativo pelo terminal
+- 🔎 Pesquisa de Pokémons pelo nome
+- 🌐 Interface web com Flask
+- 📡 Integração com API externa (PokéAPI)
+- 💾 Histórico de pesquisas com MySQL
+- 📋 Página para visualizar pesquisas anteriores
+- ⚠️ Tratamento de erros de conexão
+- 🔐 Variáveis de ambiente com `.env`
+- 📁 Código separado em módulos
+
+Informações exibidas:
+
+- Nome
+- ID
+- Altura
+- Peso
+- Habilidades
+- Tipo
+
+---
 
 ## 🛠 Tecnologias utilizadas
 
 - Python
+- Flask
 - Requests
-- PokéAPI
+- MySQL
+- HTML5
+- CSS3
+- Jinja Templates
+- python-dotenv
+
+---
+
+## 📂 Estrutura do projeto
+
+```text
+PokeAPI/
+
+├── app.py
+│
+├── src/
+│   ├── database.py
+│   └── pokemon_api.py
+│
+├── templates/
+│   ├── index.html
+│   └── historico.html
+│
+├── static/
+│   └── style.css
+│
+├── .env
+├── .gitignore
+├── LICENSE
+├── requirements.txt
+└── README.md
+```
+
+---
 
 ## 🚀 Como executar
 
 Clone o repositório:
 
 ```bash
-git clone <seu-repositorio>
+git clone https://github.com/PedrReis-create/PokeAPI.git
+```
+
+Entre na pasta:
+
+```bash
+cd PokeAPI
+```
+
+Crie um ambiente virtual (opcional):
+
+```bash
+python -m venv venv
+```
+
+Ative o ambiente:
+
+Windows:
+
+```bash
+venv\Scripts\activate
 ```
 
 Instale as dependências:
 
 ```bash
-pip install requests
+pip install -r requirements.txt
+```
+
+Configure o arquivo `.env`:
+
+MySQL
+
+```env
+DB_HOST=localhost
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_NAME=seu_banco
+DB_PORT=3307
 ```
 
 Execute:
 
 ```bash
-python mainpoke.py
+python app.py
 ```
 
-## 📷 Exemplo
+Abra no navegador:
 
+```text
+http://127.0.0.1:5000/
 ```
-Bem-vindo a PokeAPI!
 
-1 - Buscar Pokémon
-2 - Ver histórico
-3 - Sair
+---
 
-Escolha: 1
+## 🖥 Exemplo de uso
 
-Digite o nome do pokemon que deseja consultar: pikachu
+Pesquisa:
 
+```text
+pikachu
+```
+
+Resultado:
+
+```text
 Nome: Pikachu
-Id: 25
+
+ID: 25
+
 Altura: 4
+
 Peso: 60
 
 Habilidades:
@@ -71,6 +160,8 @@ Tipo:
 Electric
 ```
 
+---
+
 ## 📊 Estatísticas do Projeto
 
 ![Commits](https://img.shields.io/github/commit-activity/m/PedrReis-create/PokeAPI)
@@ -79,23 +170,36 @@ Electric
 
 ![Tamanho](https://img.shields.io/github/repo-size/PedrReis-create/PokeAPI)
 
+---
 
 ## 📈 Próximas melhorias
 
-- Histórico de pesquisas
-- Sistema de favoritos
-- Separação em módulos
-- Interface web usando Flask
+- 🎨 Melhorar design da interface
+- ⭐ Sistema de Pokémons favoritos
+- 🔎 Filtros avançados de pesquisa
+- 🐳 Docker
+- 🚀 Deploy online
 
+---
 
-## 👥 Equipe de Desenvolvimento
+## 👥 Desenvolvedor
 
 <table>
 <tr>
 
 <td align="center">
+
 <a href="https://github.com/PedrReis-create">
-<img src="https://github.com/PedrReis-create.png" width="100"><br>
+
+<img src="https://github.com/PedrReis-create.png" width="100">
+
+<br>
+
 <b>PedrReis-create</b>
+
 </a>
+
 </td>
+
+</tr>
+</table>
