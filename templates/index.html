@@ -23,6 +23,23 @@
         Altura do seu pokemon: {{pokemon_info.height}}<br>
         Peso do seu pokemon: {{pokemon_info.weight}}
     </p>
+    <h3>Habilidades:</h3>
+    {% for habilidades in pokemon_info.abilities %}
+
+        <p>
+            {{ habilidade.ability.name | capitalize}}
+        </p>
+    {% endfor %}
+
+    <h3>Tipos:</h3>
+
+    {% for tipo in pokemon_info.types %}
+
+    <p>
+        {{ tipo.type.name | capitalize }}
+    </p>
+
+    {% endfor %}
 
     {% endif %}
     <br>
