@@ -18,6 +18,8 @@
     </p>
 
     {% if pokemon_info %}
+    <img src="{{ pokemon_info.sprites.front_default }}">
+    
     <p> Nome do seu pokemon: {{pokemon_info.name | capitalize}}<br>
         ID do seu pokemon: {{pokemon_info.id}}<br>
         Altura do seu pokemon: {{pokemon_info.height}}<br>
