@@ -18,6 +18,9 @@ def conectar():
 
 
 def salvar_historico(pokemon):
+    cursor = None
+    conexao = None
+    
     try:
         conexao = conectar()
         cursor = conexao.cursor()
@@ -29,15 +32,23 @@ def salvar_historico(pokemon):
 
         conexao.commit()
 
-    except mysql.connector.Error:
-        print("Erro ao salvar no histórico")
+    except mysql.connector.Error as erro:
+        print(erro)
 
     finally:
-        cursor.close()
-        conexao.close()
+        if cursor:
+            cursor.close()
+
+        if conexao:
+            conexao.close()
 
 
 def mostrar_historico():
+    
+    cursor = None
+    conexao = None
+    
+    
     try:
         conexao = conectar()
         cursor = conexao.cursor()
@@ -49,10 +60,13 @@ def mostrar_historico():
         resultado = cursor.fetchall()
         return resultado
 
-    except mysql.connector.Error:
-        print("Erro ao mostrar o histórico")
+    except mysql.connector.Error as erro:
+        print(erro)
         return []
 
     finally:
-        cursor.close()
-        conexao.close()
+        if cursor:
+            cursor.close()
+
+        if conexao:
+            conexao.close()
