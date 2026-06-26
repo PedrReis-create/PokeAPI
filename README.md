@@ -24,6 +24,7 @@ O projeto consome a PokéAPI para buscar informações de Pokémons e utiliza My
 
 Informações exibidas:
 
+- Foto
 - Nome
 - ID
 - Altura
@@ -144,6 +145,8 @@ pikachu
 Resultado:
 
 ```text
+# Foto do pokemon
+
 Nome: Pikachu
 
 ID: 25
