@@ -1,7 +1,8 @@
 # 🐍 Pokédex Web API
 
 Aplicação web desenvolvida em Python utilizando Flask.  
-O projeto consome a PokéAPI para buscar informações de Pokémons e utiliza MySQL para armazenar o histórico de pesquisas.
+O projeto consome a PokéAPI para buscar informações de Pokémons e utiliza MySQL para armazenar o histórico de pesquisas. Um projeto criado para estudo de Flask
+
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue)
 ![Flask](https://img.shields.io/badge/Flask-Web-green)
